@@ -4,3 +4,12 @@
     box-sizing: border-box;
     font-family: 'Cream Demo';
 }
+body {
+  display: flexbox;
+    background: linear-gradient(
+    to left,
+    rgb(111, 128, 176) 0%,
+    rgb(155, 242, 242) 100%
+  );
+}
+
