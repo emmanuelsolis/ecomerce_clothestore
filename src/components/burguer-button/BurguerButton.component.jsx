@@ -26,10 +26,12 @@ const Burguer = styled.div`
     position: relative;
     cursor: pointer;
     display: inline-block;
+    z-index: 100;
   }
   .nav-icon-5 span{
     background-color:#fff;
     position: absolute;
+    
     border-radius: 2px;
     transition: .3s cubic-bezier(.8, .5, .2, 1.4);
     width:100%;

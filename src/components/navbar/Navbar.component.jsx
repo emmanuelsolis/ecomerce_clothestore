@@ -63,6 +63,8 @@ a {
         color: white;
         font-size: 2rem;
         display: block;
+        position: relative;
+        z-index: 100;
     }
     @media(min-width: 768px) {
         position: initial;
@@ -101,11 +103,12 @@ a {
 const BgDiv = styled.div`
 background-color: #222;
     position: absolute;
-    top: -1000px;
-    left: -1000px;
+    top: -2000px;
+    left: -2000px;
     width: 100%;
     height: 100%;
-    z-index: -1;
+   
+    z-index: 10;
     transition: all 0.9s ease-in-out;
     &.active {
         border-radius: 0 0 60% 0;
