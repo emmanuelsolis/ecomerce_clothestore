@@ -3,13 +3,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cream Demo';
-}
+   /* border: red solid 1px;   */
+} 
 body {
-  display: flexbox;
+    display: flexbox;
     background: linear-gradient(
     to left,
     rgb(111, 128, 176) 0%,
     rgb(155, 242, 242) 100%
   );
+  padding: 20px, 60px;
 }
-
+.App {
+  font-family: 'Cream Demo';
+  padding: 0 20px;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
