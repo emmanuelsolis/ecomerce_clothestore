@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
+
+import { Link } from 'react-router-dom'
+import {ReactComponent as Logo} from '../../assets/084 crown.svg'
 import styled from 'styled-components'
 import BurguerButton from '../burguer-button/BurguerButton.component'
+import './navbar.styles.scss'
 
 function Navbar() {
     const [clicked, setClicked] = useState(false)
@@ -13,13 +17,26 @@ function Navbar() {
   return (
     <>
         <NavContainer className='navbar'>
-            <h2>Navbar <span>Responsive</span></h2>
-            <div className={`links ${clicked ? 'active': ''}`}>
-                 <a onClick={handleClick} href="#h">Home</a>
-                 <a onClick={handleClick} href="#h">Shop</a>
-                 <a onClick={handleClick} href="#h">About</a>
-                 <a onClick={handleClick} href="#h">Contact</a>
-                 <a onClick={handleClick} href="#h">Blog</a>
+            <Link className='logo-container' to={'/'}>
+                <Logo className='logo'/>
+                <h1>Crown Market</h1>
+            </Link>
+            <div className={`links ${clicked ? 'active options': 'options'}`}>
+                 <Link className="option" to='/'>
+                    HOME
+                 </Link>
+                 <Link className="option" to='/shop'>
+                    ABOUT
+                 </Link>
+                 <Link className="option" to='/shop'>
+                    SHOP
+                 </Link>
+                 <Link className="option" to='/shop'>
+                    CONTACT
+                 </Link> 
+                 <Link className="option" to='/shop'>
+                    BLOG
+                 </Link>
             </div>
             <div className='burguer'>
                 <BurguerButton clicked={clicked} handleClick={handleClick}/>
@@ -51,18 +68,19 @@ a {
     margin-right: 1rem;
 }
 .links {
+    display: flex;
+    align-items: flex-end;
     position: absolute;
     top: -700px;
     left: -2000px;
     right:0;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: flex-end;
     transition: all 1.2s ease-in-out;
     a {
         color: white;
         font-size: 2rem;
-        display: block;
         position: relative;
         z-index: 100;
     }
@@ -72,19 +90,22 @@ a {
         a {
             font-size: 1rem;
             color : #fff;
-            display: inline-block;
+            ${'' /* display: inline-block; */}
         }
-        display: block;
+        ${'' /* display: block; */}
     }
 }
 
 .links.active {
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        top:30%;
+        top:5%;
         left: 0;
         right: 0;
         text-align: center;
