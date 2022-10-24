@@ -22,7 +22,7 @@
         }
    }
    .options {
-         width: 30%;
+         width: auto;
          height: 100%;
          display: flex;
          align-items: flex-end;
@@ -37,11 +37,13 @@
              font-size:1.5rem;
              font-weight: bold;
          }
-    }
-    @media screen and (max-width: 600px) {
-        height: 25vh;
-        .options {
-            display: none;
+    
+        @media screen and (max-width: 600px) {
+            height: 25vh;
+            .options {
+                display: none;
+                visibility: hidden;
+            }
         }
     }
         

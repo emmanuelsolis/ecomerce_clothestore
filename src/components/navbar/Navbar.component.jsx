@@ -34,8 +34,8 @@ function Navbar() {
                  <Link className="option" to='/shop'>
                     CONTACT
                  </Link> 
-                 <Link className="option" to='/shop'>
-                    BLOG
+                 <Link className="option" to='/signIn'>
+                    SIGN IN
                  </Link>
             </div>
             <div className='burguer'>
@@ -50,7 +50,7 @@ function Navbar() {
 export default Navbar
 
 const NavContainer = styled.nav`
-padding: 2.5rem;
+padding: 2rem;
 background: #000;
 display: flex;
 align-items: center;
