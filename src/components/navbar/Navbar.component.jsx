@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 import {ReactComponent as Logo} from '../../assets/084 crown.svg'
 import styled from 'styled-components'
 import BurguerButton from '../burguer-button/BurguerButton.component'
+import { auth } from '../../firebase/firebase.utils'
 import './navbar.styles.scss'
 
-function Navbar() {
+function Navbar({ currentUser }) {
     const [clicked, setClicked] = useState(false)
     console.log("clicked", clicked)
     const handleClick = () => {
@@ -34,9 +35,13 @@ function Navbar() {
                  <Link className="option" to='/shop'>
                     CONTACT
                  </Link> 
-                 <Link className="option" to='/signIn'>
-                    SIGN IN
-                 </Link>
+                 
+                 {
+                        currentUser ?
+                        <div className='option' onClick={()=> auth.signOut()}>SIGN OUT</div>
+                        :
+                        <Link className='option' to='/signin'>SIGN IN</Link>
+                 }
             </div>
             <div className='burguer'>
                 <BurguerButton clicked={clicked} handleClick={handleClick}/>
